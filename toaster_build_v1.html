@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build — Toaster Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=DM+Sans:opsz,wght@9..40,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F2EDE4;
+  --bg-warm: #EBE4D6;
+  --ink: #1A1612;
+  --ink-soft: #4A3F35;
+  --rule: #C9BEA9;
+  --rule-soft: #D8CFBC;
+
+  --teal: #1F4847;
+  --brown: #6B4F3A;
+  --green: #6F7E5C;
+  --accent: var(--teal);
+
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'DM Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(26, 22, 18, 0.018) 1px, transparent 1px),
+    radial-gradient(rgba(26, 22, 18, 0.012) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+main, header, footer { position: relative; z-index: 2; }
+
+/* ─────────── NAV ─────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem var(--gutter);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.wordmark {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark span { color: var(--ink-soft); }
+
+nav {
+  display: flex;
+  gap: 1.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover { color: var(--ink); }
+nav a.active { color: var(--ink); }
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--brown);
+}
+
+@media (max-width: 720px) { nav { display: none; } }
+
+/* ─────────── PAGE TITLE ─────────── */
+.page-title {
+  position: relative;
+  padding: clamp(4rem, 10vh, 7rem) clamp(2rem, 6vw, 4rem) clamp(3rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.page-title::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(4rem, 10vh, 7rem);
+  bottom: clamp(3rem, 6vw, 5rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+.breadcrumb {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.breadcrumb .marker {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--brown);
+  border-radius: 50%;
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.breadcrumb a:hover { color: var(--ink); }
+
+.page-title h1 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.page-summary {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--brown);
+  max-width: 32ch;
+  line-height: 1.3;
+}
+
+/* ─────────── CONTENT SECTIONS ─────────── */
+.content-section {
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(2rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--rule-soft);
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1280px;
+}
+
+.content-section::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(3.5rem, 8vw, 6rem);
+  bottom: clamp(3.5rem, 8vw, 6rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+@media (max-width: 820px) {
+  .content-section { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.section-marker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.section-marker .num {
+  color: var(--brown);
+  font-weight: 500;
+}
+
+.section-body h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.2;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+  max-width: 24ch;
+}
+
+.section-body p {
+  margin-bottom: 1rem;
+  max-width: 60ch;
+  color: var(--ink);
+}
+
+.section-body p.muted {
+  color: var(--ink-soft);
+}
+
+.section-body strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Sub-step blocks (Scope / Make / Ship / After) */
+.steps {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.step {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.25rem;
+}
+
+.step-name {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
+  font-variation-settings: "SOFT" 100;
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 58ch;
+}
+
+/* Pricing block */
+.pricing-block {
+  background: var(--bg-warm);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--rule);
+  margin-top: 1.5rem;
+  max-width: 60ch;
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+.pricing-row:last-child { border-bottom: none; }
+
+.pricing-label {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-variation-settings: "SOFT" 100;
+  color: var(--ink);
+}
+
+.pricing-amount {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+/* ─────────── BOTTOM CTA ─────────── */
+.bottom-cta {
+  background: var(--ink);
+  color: var(--bg);
+  padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 4rem);
+}
+
+.bottom-cta-marker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rule);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.bottom-cta-marker::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: var(--rule);
+}
+
+.bottom-cta h2 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  font-variation-settings: "SOFT" 60, "opsz" 144;
+  max-width: 30ch;
+  margin-bottom: 2rem;
+  color: var(--bg);
+}
+
+.bottom-cta h2 em {
+  font-style: italic;
+  color: var(--rule);
+  font-variation-settings: "SOFT" 100;
+}
+
+.bottom-cta p {
+  color: var(--rule);
+  max-width: 50ch;
+  margin-bottom: 2.5rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bg);
+  text-decoration: none;
+  padding: 1.1rem 1.8rem;
+  border: 1px solid var(--rule);
+  transition: background 0.25s ease, color 0.25s ease, gap 0.25s ease;
+}
+
+.cta-button:hover {
+  background: var(--bg);
+  color: var(--ink);
+  gap: 1rem;
+}
+
+.cta-button::after { content: "→"; }
+
+/* ─────────── FOOTER ─────────── */
+footer {
+  padding: 3rem var(--gutter);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--bg);
+}
+
+footer span:first-child { text-transform: uppercase; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <a href="toaster_homepage_v1.html" class="wordmark">Toaster <span>Studio</span></a>
+  <nav>
+    <a href="toaster_build_v1.html" class="active">Build</a>
+    <a href="toaster_adopt_v1.html">Adopt</a>
+    <a href="toaster_manifest_v1.html">Manifest</a>
+    <a href="#">Work</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PAGE TITLE -->
+  <section class="page-title">
+    <div class="breadcrumb">
+      <span class="marker"></span>
+      <a href="toaster_homepage_v1.html">Toaster</a> &nbsp;/&nbsp; Build
+    </div>
+    <h1>Build.</h1>
+    <p class="page-summary">A project. Defined scope, shipped result, end date.</p>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="content-section">
+    <div class="section-marker">
+      <span class="num">i.</span>
+      <span>What we build</span>
+    </div>
+    <div class="section-body">
+      <h2>Single deliverables with internal complexity.</h2>
+      <p>Sites, systems, interfaces, identities. Most often for teams in defense, finance, governance, and selected commercial work. The work is usually a single deliverable with internal complexity — a portal that has to pass compliance review, a sales site that has to feel different from the rest of the category, a system that has to live alongside legacy infrastructure.</p>
+      <p class="muted">We don't take on every project. We take on projects where the four parts of the system — the client, the audience, the work, the people building it — have a chance of moving together. If one of those is broken before we start, the project will not survive contact with reality, and we'll say so.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="content-section">
+    <div class="section-marker">
+      <span class="num">ii.</span>
+      <span>How a build works</span>
+    </div>
+    <div class="section-body">
+      <h2>Four phases. Plain language. No surprises.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <p class="step-name">Scope.</p>
+          <p>We write the scope together. Two to three working sessions, sometimes more for complex systems. The scope document is short, written in plain language, and includes what we will not do as clearly as what we will. You sign it; we sign it; it becomes the contract.</p>
+        </div>
+
+        <div class="step">
+          <p class="step-name">Make.</p>
+          <p>The studio delivers. Three people, with banking-grade engineering through Inetis when the work needs it — typically for compliance-heavy, security-sensitive, or large-scale systems. AI infrastructure is used where it earns its place: asset preparation, content production, internal tooling. It is not used where it doesn't belong — strategy, judgement, or anything where being wrong has consequences.</p>
+        </div>
+
+        <div class="step">
+          <p class="step-name">Ship.</p>
+          <p>We ship to staging early and often. You see the work growing, not a final reveal. When the work is ready for production, we hand over with documentation your team can read, not just your developers.</p>
+        </div>
+
+        <div class="step">
+          <p class="step-name">After.</p>
+          <p>We are available for a defined period after launch — typically four to eight weeks — for adjustments and the first round of real-world feedback. After that, the work is yours. If you want continued involvement, that is a different conversation: see <em>adopt</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO DELIVERS -->
+  <section class="content-section">
+    <div class="section-marker">
+      <span class="num">iii.</span>
+      <span>Who delivers the work</span>
+    </div>
+    <div class="section-body">
+      <h2>Three people. Inetis when the work demands it.</h2>
+      <p><strong>Standard scope:</strong> the studio. Three people, working directly with you. No account managers, no junior staff learning on your project.</p>
+      <p><strong>Banking-grade or large-scale scope:</strong> the studio plus Inetis. Inetis is a Swiss-Slovenian engineering partner with twenty years of work in regulated finance. They are named on the contract, named on this page, and visible from the first conversation. Subcontracting hidden behind our brand is not how we work.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT COSTS -->
+  <section class="content-section">
+    <div class="section-marker">
+      <span class="num">iv.</span>
+      <span>What it costs</span>
+    </div>
+    <div class="section-body">
+      <h2>Fixed scope. Indicative ranges.</h2>
+      <p class="muted">Most projects sit in the middle of the standard range. The lower end is a focused single deliverable; the upper end is a system with multiple surfaces and integration work.</p>
+
+      <div class="pricing-block">
+        <div class="pricing-row">
+          <span class="pricing-label">Standard projects</span>
+          <span class="pricing-amount">€15,000 — €80,000</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-label">Enterprise scope, Inetis-led</span>
+          <span class="pricing-amount">On quote</span>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;" class="muted">Pricing is fixed per scope, not time-and-materials. If the scope changes mid-project, we write a short addendum. No surprises at invoicing time.</p>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="content-section">
+    <div class="section-marker">
+      <span class="num">v.</span>
+      <span>What happens next</span>
+    </div>
+    <div class="section-body">
+      <h2>Tell us about the project.</h2>
+      <p>We respond personally within one working day, usually with a short reply that asks two or three clarifying questions before we propose a working session.</p>
+      <p class="muted">We take on three to five new build projects each quarter, so a fast no is also possible — and is meant as a signal that you should look elsewhere, not a judgement about the work.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bottom-cta">
+    <div class="bottom-cta-marker">Start</div>
+    <h2>If your project has the four parts <em>moving together</em>, we'd like to hear about it.</h2>
+    <p>Tell us about the project. Personal reply within one working day.</p>
+    <a href="#" class="cta-button">Start a conversation</a>
+  </section>
+
+</main>
+
+<footer>
+  <span>Toaster Studio © 2026</span>
+  <span>Ljubljana · Working with teams in defense, finance, governance</span>
+</footer>
+
+</body>
+</html>

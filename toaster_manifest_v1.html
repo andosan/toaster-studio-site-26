@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How we work — Toaster Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=DM+Sans:opsz,wght@9..40,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F2EDE4;
+  --bg-warm: #EBE4D6;
+  --ink: #1A1612;
+  --ink-soft: #4A3F35;
+  --rule: #C9BEA9;
+  --rule-soft: #D8CFBC;
+  --teal: #1F4847;
+  --brown: #6B4F3A;
+  --green: #6F7E5C;
+  --accent: var(--teal);
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'DM Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(26, 22, 18, 0.018) 1px, transparent 1px),
+    radial-gradient(rgba(26, 22, 18, 0.012) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+main, header, footer { position: relative; z-index: 2; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem var(--gutter);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.wordmark {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.wordmark span { color: var(--ink-soft); }
+
+nav {
+  display: flex;
+  gap: 1.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+nav a:hover { color: var(--ink); }
+nav a.active { color: var(--ink); }
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--teal);
+}
+
+@media (max-width: 720px) { nav { display: none; } }
+
+/* ─────────── PAGE TITLE — manifesto framing ─────────── */
+.manifest-cover {
+  position: relative;
+  padding: clamp(5rem, 14vh, 9rem) clamp(2rem, 6vw, 4rem) clamp(4rem, 8vw, 6rem);
+  border-bottom: 1px solid var(--rule-soft);
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1280px;
+}
+
+@media (max-width: 820px) {
+  .manifest-cover { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+.manifest-cover::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(5rem, 14vh, 9rem);
+  bottom: clamp(4rem, 8vw, 6rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+.cover-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.cover-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.cover-meta-line .marker {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--teal);
+  border-radius: 50%;
+}
+
+.cover-meta-line a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.cover-meta-line a:hover { color: var(--ink); }
+
+.cover-content h1 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.cover-content .lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--brown);
+  max-width: 42ch;
+  line-height: 1.4;
+}
+
+/* ─────────── PRINCIPLES ─────────── */
+.principle {
+  position: relative;
+  padding: clamp(4rem, 9vw, 7rem) clamp(2rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--rule-soft);
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1280px;
+}
+
+.principle::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(4rem, 9vw, 7rem);
+  bottom: clamp(4rem, 9vw, 7rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+@media (max-width: 820px) {
+  .principle { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.principle-marker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.principle-marker .num {
+  display: block;
+  font-family: var(--display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3.5rem;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--teal);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.principle-body h2 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  margin-bottom: 1.75rem;
+  color: var(--ink);
+  max-width: 22ch;
+}
+
+.principle-body h2 em {
+  font-style: italic;
+  color: var(--teal);
+  font-variation-settings: "SOFT" 100;
+}
+
+.principle-body p {
+  margin-bottom: 1.25rem;
+  max-width: 60ch;
+  color: var(--ink);
+}
+
+.principle-body p.muted {
+  color: var(--ink-soft);
+}
+
+.principle-body strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Principle 3 — special treatment for AI, since it's the most-read */
+.principle.highlight {
+  background: var(--bg-warm);
+}
+
+/* ─────────── COLOPHON ─────────── */
+.colophon {
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 6vw, 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+.colophon-text {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-variation-settings: "SOFT" 100;
+  color: var(--ink);
+  letter-spacing: 0;
+  text-transform: none;
+  max-width: 50ch;
+}
+
+/* ─────────── BOTTOM CTA ─────────── */
+.bottom-cta {
+  background: var(--ink);
+  color: var(--bg);
+  padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 4rem);
+}
+
+.bottom-cta-marker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rule);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.bottom-cta-marker::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: var(--rule);
+}
+
+.bottom-cta h2 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  font-variation-settings: "SOFT" 60, "opsz" 144;
+  max-width: 32ch;
+  margin-bottom: 2rem;
+  color: var(--bg);
+}
+
+.bottom-cta h2 em {
+  font-style: italic;
+  color: var(--rule);
+  font-variation-settings: "SOFT" 100;
+}
+
+.bottom-cta p {
+  color: var(--rule);
+  max-width: 50ch;
+  margin-bottom: 2.5rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bg);
+  text-decoration: none;
+  padding: 1.1rem 1.8rem;
+  border: 1px solid var(--rule);
+  transition: background 0.25s ease, color 0.25s ease, gap 0.25s ease;
+}
+.cta-button:hover { background: var(--bg); color: var(--ink); gap: 1rem; }
+.cta-button::after { content: "→"; }
+
+footer {
+  padding: 3rem var(--gutter);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--bg);
+}
+
+footer span:first-child { text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="toaster_homepage_v1.html" class="wordmark">Toaster <span>Studio</span></a>
+  <nav>
+    <a href="toaster_build_v1.html">Build</a>
+    <a href="toaster_adopt_v1.html">Adopt</a>
+    <a href="toaster_manifest_v1.html" class="active">Manifest</a>
+    <a href="#">Work</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- COVER -->
+  <section class="manifest-cover">
+    <div class="cover-meta">
+      <div class="cover-meta-line">
+        <span class="marker"></span>
+        <a href="toaster_homepage_v1.html">Toaster</a> &nbsp;/&nbsp; Manifest
+      </div>
+      <div>Five principles<br>April 2026</div>
+    </div>
+    <div class="cover-content">
+      <h1>How we work.</h1>
+      <p class="lede">Five principles, written down so that you and we both know what we are agreeing to before we start.</p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 1 -->
+  <section class="principle">
+    <div class="principle-marker">
+      <span class="num">i</span>
+      Principle one
+    </div>
+    <div class="principle-body">
+      <h2>The project is the <em>system</em>, not the deliverable.</h2>
+      <p>Every project we take on has four parts: the client who has to live with the result, the audience the work is made for, the work itself with its own logic and lifespan, and the people building it. We work on all four at once. A beautifully made deliverable that the client team cannot operate, that the audience does not trust, or that the makers cannot maintain is a failed project — even if it ships on time.</p>
+      <p class="muted">This means our work begins before scope and continues past launch. The scope conversation is itself part of the work. The handoff is part of the work. What happens to the project six months after we leave is part of the work, even if we are not in the room for it. We design with all of that in view.</p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 2 -->
+  <section class="principle">
+    <div class="principle-marker">
+      <span class="num">ii</span>
+      Principle two
+    </div>
+    <div class="principle-body">
+      <h2>We say <em>no</em> when one of the four parts is broken.</h2>
+      <p>Some projects come to us with one part already broken before the first conversation. The client team has been instructed to deliver something they don't believe in. The audience is being assumed rather than understood. The work itself is the wrong answer to the actual problem. The makers — us, in this case — would be set up to fail.</p>
+      <p class="muted">When we see this, we say so. Sometimes the conversation that follows fixes the broken part and the project goes ahead. Sometimes it doesn't, and we don't take the work. <strong>Saying no early is a service we provide, not a failure of nerve.</strong> Three to five new clients per quarter is a number we hold to specifically so that we can afford to say no when no is the right answer.</p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 3 — highlighted -->
+  <section class="principle highlight">
+    <div class="principle-marker">
+      <span class="num">iii</span>
+      Principle three
+    </div>
+    <div class="principle-body">
+      <h2>AI is a <em>tool</em>. We use it where it earns its place.</h2>
+      <p>We run AI in three layers across our own studio: creative production (asset generation, brand-consistent imagery, color grading), production infrastructure (asset processing pipelines, integrations, internal automations), and underlying infrastructure (analytics, content delivery, search optimization). We use these layers because they let three people do the work of thirty without losing the discipline of three.</p>
+      <p>We do not use AI for strategy. We do not use AI for judgement calls about what a client should do. We do not use AI to write the parts of the work where being wrong has consequences — legal copy, regulated content, anything that reflects an institutional voice. We do not use AI as a substitute for understanding the audience. <strong>The line is not where AI is technically capable; the line is where being wrong matters and the cost of correction is high.</strong></p>
+      <p class="muted">When we use AI inside client work, we say so. When we don't, we say that too. The studio's AI infrastructure is part of how we deliver, not a hidden ingredient.</p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 4 -->
+  <section class="principle">
+    <div class="principle-marker">
+      <span class="num">iv</span>
+      Principle four
+    </div>
+    <div class="principle-body">
+      <h2>We <em>name</em> our partners.</h2>
+      <p>Banking-grade engineering on enterprise scope is delivered jointly with Inetis, a Swiss-Slovenian engineering partner with twenty years in regulated finance. Inetis is named on the contract, named on this site, and visible from the first conversation. We do not subcontract behind our own brand.</p>
+      <p class="muted">The same holds for the rest of our stack. The tools we run, the infrastructure we depend on, the people we bring in for specialist work — these are visible to clients who ask, and most of them are listed publicly. A studio of three is only honest about being a studio of three if it is also honest about the network around it.</p>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 5 -->
+  <section class="principle">
+    <div class="principle-marker">
+      <span class="num">v</span>
+      Principle five
+    </div>
+    <div class="principle-body">
+      <h2>The work has to <em>outlive</em> us.</h2>
+      <p>When a project ships, it has to be operable by the team that owns it without us in the room. Documentation written in plain language, not just for developers. Systems that the client team can extend without rebuilding. Decisions made early enough that the client team can carry them forward.</p>
+      <p class="muted">For projects where the team needs to internalize new capability — most often AI capability — we offer adopt as a separate service. Adopt is what happens when build alone is not enough: the team needs to learn to operate the new work, not just receive it. Either way, the goal is the same. The work is yours after we ship it. <strong>We measure ourselves by what your team does with it next.</strong></p>
+    </div>
+  </section>
+
+  <!-- COLOPHON -->
+  <section class="colophon">
+    <span class="colophon-text">Last revised April 2026. We update this page when our practice changes, not on a schedule.</span>
+    <span>v.01</span>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <div class="bottom-cta-marker">Start</div>
+    <h2>If our principles align with yours, the next step is <em>a conversation</em>.</h2>
+    <p>Tell us about the project. Personal reply within one working day.</p>
+    <a href="#" class="cta-button">Start a conversation</a>
+  </section>
+
+</main>
+
+<footer>
+  <span>Toaster Studio © 2026</span>
+  <span>Ljubljana · Working with teams in defense, finance, governance</span>
+</footer>
+
+</body>
+</html>
