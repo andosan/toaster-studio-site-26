@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { CubeNet } from "./CubeNet";
+import { CubeStack } from "./CubeStack";
 import styles from "./Hero.module.css";
 
 export async function Hero() {
@@ -8,7 +8,7 @@ export async function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.diagram}>
-        <CubeNet />
+        <CubeStack />
       </div>
       <div className={`${styles.top} fade-in`}>
         <span className={styles.edition}>
