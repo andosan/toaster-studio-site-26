@@ -11,7 +11,7 @@
   isolation: isolate;
 }
 
-.oscillators {
+.diagram {
   position: absolute;
   top: clamp(2rem, 5vh, 4rem);
   bottom: clamp(2rem, 5vh, 4rem);
@@ -22,7 +22,7 @@
 }
 
 @media (max-width: 820px) {
-  .oscillators {
+  .diagram {
     display: none;
   }
 }
