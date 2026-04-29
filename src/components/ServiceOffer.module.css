@@ -1,0 +1,109 @@
+.section {
+  padding: clamp(4rem, 10vw, 8rem) var(--gutter);
+  border-bottom: 1px solid var(--rule-soft);
+  background: var(--bg-warm);
+}
+
+.intro {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-variation-settings: "SOFT" 50;
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+  color: var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service {
+  background: var(--bg-warm);
+  padding: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 350;
+  line-height: 1;
+  font-variation-settings: "SOFT" 30;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.summary {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 350;
+  font-variation-settings: "SOFT" 80;
+  color: var(--brown);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.body {
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.meta span {
+  display: block;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+.cta {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.25s ease;
+}
+
+.cta:hover {
+  gap: 0.85rem;
+}
+
+.cta::after {
+  content: "→";
+}

@@ -1,0 +1,26 @@
+.label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.label::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: var(--ink-soft);
+}
+
+.dark {
+  color: var(--rule);
+}
+
+.dark::before {
+  background: var(--rule);
+}

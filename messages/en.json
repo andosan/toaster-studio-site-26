@@ -3,8 +3,131 @@
     "title": "Toaster Studio",
     "description": "A three-person studio in Ljubljana working with teams in defense, finance, governance, and selected commercial clients."
   },
+  "header": {
+    "wordmarkPrefix": "Toaster",
+    "wordmarkSuffix": "Studio",
+    "nav": {
+      "build": "Build",
+      "adopt": "Adopt",
+      "manifest": "Manifest",
+      "work": "Work",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "copyright": "Toaster Studio © 2026",
+    "tagline": "Ljubljana · Working with teams in defense, finance, governance"
+  },
   "home": {
     "title": "Toaster Studio",
-    "lede": "We work with teams in defense, finance, governance, and selected commercial clients on systems where the work, the audience, and the people building it have to keep moving together."
+    "lede": "Every project is a living system. We work where the parts meet.",
+    "hero": {
+      "edition": "Toaster Studio · April 2026",
+      "scroll": "Read on",
+      "lineStatement": "Every project is a living",
+      "lineStatementEmphasis": "system",
+      "lineParts": "the client, the audience, the work, the people building it.",
+      "lineResolution": "We keep all four moving together.",
+      "verticals": "Defense · Finance · Governance",
+      "meta": "Studio of three · Ljubljana"
+    },
+    "integral": {
+      "label": "01 / The view",
+      "lede": "Most projects fail not in the parts but in the spaces between them. A beautiful design that the team can't operate. A working system the audience won't trust. A clever tool nobody asked for. We work where the parts meet.",
+      "ledeEmphasis": "spaces between them",
+      "parts": {
+        "client": {
+          "number": "i.",
+          "title": "The client.",
+          "body": "The team that has to live with the result long after we leave. If the work doesn't fit how they actually operate, it dies on contact."
+        },
+        "audience": {
+          "number": "ii.",
+          "title": "The audience.",
+          "body": "The people the work is made for. Defense procurement officers, banking compliance teams, citizens reading a government portal — each reads the same artefact differently. The work has to land for them, not for us."
+        },
+        "work": {
+          "number": "iii.",
+          "title": "The work itself.",
+          "body": "The artefact, the system, the interface. It has its own logic, constraints, and lifespan. We let it tell us what it wants to be, instead of forcing a template onto it."
+        },
+        "people": {
+          "number": "iv.",
+          "title": "The people building it.",
+          "body": "Us, our partners, the tools we run. Three people, banking-grade engineering through Inetis, AI infrastructure where it belongs. The making is part of the system, not separate from it."
+        }
+      }
+    },
+    "services": {
+      "label": "02 / Two ways to work",
+      "intro": "Two ways to work with us.",
+      "build": {
+        "tag": "Project",
+        "title": "Build.",
+        "summary": "A project. Defined scope, shipped result, end date.",
+        "body": "Sites, systems, interfaces, identities. Delivered by the studio for standard scope, jointly with Inetis when the work needs banking-grade engineering.",
+        "metaPrice": "€15,000 — €80,000",
+        "metaScope": "Enterprise scope on quote",
+        "cta": "How a build engagement works"
+      },
+      "adopt": {
+        "tag": "Relationship",
+        "title": "Adopt.",
+        "summary": "A relationship. Your team learns to operate AI capability without us in the room.",
+        "body": "Three phases over three to six months: audit, pilot, embed. Founder-led, weekly cadence. The goal is your team's independence, not our retention.",
+        "metaPrice": "From €3,000 / month",
+        "metaScope": "3-month minimum · 2–3 engagements at a time",
+        "cta": "How an adopt engagement works"
+      }
+    },
+    "liveProof": {
+      "label": "03 / In production",
+      "tag": "Placeholder",
+      "title": "Live proof — TBD",
+      "note": "Color Grading Agent and other interactive proofs to be embedded here once project selection and embed format are decided."
+    },
+    "work": {
+      "label": "04 / Selected work",
+      "intro": "Selected work.",
+      "subtitle": "A few projects that show how we hold the four parts together. Not a portfolio — a sample.",
+      "items": {
+        "first": {
+          "number": "i.",
+          "title": "Project name — to populate",
+          "body": "Vertical · what was built · which part of the system this project demonstrates.",
+          "tag": "[ client ]"
+        },
+        "second": {
+          "number": "ii.",
+          "title": "Project name — to populate",
+          "body": "Vertical · what was built · which part of the system this project demonstrates.",
+          "tag": "[ audience ]"
+        },
+        "third": {
+          "number": "iii.",
+          "title": "Project name — to populate",
+          "body": "Vertical · what was built · which part of the system this project demonstrates.",
+          "tag": "[ work ]"
+        },
+        "fourth": {
+          "number": "iv.",
+          "title": "Project name — to populate",
+          "body": "Vertical · what was built · which part of the system this project demonstrates.",
+          "tag": "[ people ]"
+        }
+      },
+      "footer": "→ See all work"
+    },
+    "reference": {
+      "label": "05 / Reference",
+      "title": "A partial list."
+    },
+    "cta": {
+      "label": "06 / Start",
+      "text": "We take on three to five new clients each quarter. We pick the ones where the four parts have a chance of moving together.",
+      "textEmphasis": "the four parts have a chance of moving together",
+      "secondary": "If that sounds like your project, tell us about it. We respond personally within one working day.",
+      "button": "Start a conversation"
+    }
   }
 }

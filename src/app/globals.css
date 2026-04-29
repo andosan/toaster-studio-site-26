@@ -44,6 +44,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
+}
+
+/* Subtle paper grain — adds depth without noise */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(26, 22, 18, 0.018) 1px, transparent 1px),
+    radial-gradient(rgba(26, 22, 18, 0.012) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 2;
 }
 
 a {
@@ -51,19 +74,17 @@ a {
   text-decoration: none;
 }
 
-main {
-  padding: var(--gutter);
+/* Page-load animation — used selectively on hero elements via `fade-in` class.
+   Pure CSS, no JS, no hydration cost. Runs once on initial paint. */
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-h1 {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-}
-
-p {
-  max-width: var(--column);
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,0 +1,197 @@
+.section {
+  padding: clamp(4rem, 10vw, 8rem) var(--gutter);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+/* ─── Live proof placeholder ─── */
+.placeholder {
+  border: 1px dashed var(--rule);
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 11px,
+    rgba(107, 79, 58, 0.04) 11px 12px
+  );
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.placeholderTag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin-bottom: 1rem;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+}
+
+.placeholderTitle {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 350;
+  font-style: italic;
+  font-variation-settings: "SOFT" 80;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.placeholderNote {
+  font-size: 0.9rem;
+  max-width: 50ch;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ─── Selected work ─── */
+.workIntro {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-variation-settings: "SOFT" 50;
+  margin-bottom: 0.5rem;
+}
+
+.workSubtitle {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-variation-settings: "SOFT" 80;
+  color: var(--brown);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.workList {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.workItem {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+  align-items: baseline;
+  transition: padding 0.3s ease;
+}
+
+.workItem:last-of-type {
+  border-bottom: 1px solid var(--rule);
+}
+
+.workItem:hover {
+  padding-left: 1rem;
+}
+
+@media (max-width: 720px) {
+  .workItem {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.workNum {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+}
+
+.workContent h4 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.35rem;
+  font-variation-settings: "SOFT" 40;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+
+.workContent p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  max-width: 55ch;
+  line-height: 1.55;
+}
+
+.workTag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown);
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .workTag {
+    text-align: left;
+  }
+}
+
+.workFooter {
+  margin-top: 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.workFooter a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ─── Reference wall ─── */
+.reference {
+  background: var(--bg-warm);
+}
+
+.referenceTitle {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-variation-settings: "SOFT" 60;
+  font-style: italic;
+  color: var(--brown);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  max-width: 1100px;
+}
+
+@media (max-width: 900px) {
+  .logoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .logoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.logoCell {
+  background: var(--bg-warm);
+  aspect-ratio: 2 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--rule);
+  text-transform: uppercase;
+}

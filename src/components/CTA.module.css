@@ -1,0 +1,56 @@
+.section {
+  padding: clamp(5rem, 12vw, 9rem) var(--gutter);
+  background: var(--ink);
+  color: var(--bg);
+  border-bottom: 1px solid var(--ink);
+}
+
+.text {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.3;
+  font-variation-settings: "SOFT" 60;
+  max-width: 30ch;
+  margin-bottom: 2rem;
+  color: var(--bg);
+}
+
+.text em {
+  font-style: italic;
+  color: var(--rule);
+  font-variation-settings: "SOFT" 100;
+}
+
+.secondary {
+  color: var(--rule);
+  max-width: 50ch;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bg);
+  text-decoration: none;
+  padding: 1.1rem 1.8rem;
+  border: 1px solid var(--rule);
+  transition: background 0.25s ease, color 0.25s ease, gap 0.25s ease;
+}
+
+.button:hover {
+  background: var(--bg);
+  color: var(--ink);
+  gap: 1rem;
+}
+
+.button::after {
+  content: "→";
+}

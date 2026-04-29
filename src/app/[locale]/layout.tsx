@@ -11,6 +11,7 @@ const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
+  axes: ["SOFT"],
 });
 
 const dmSans = DM_Sans({

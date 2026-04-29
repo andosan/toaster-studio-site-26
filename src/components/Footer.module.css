@@ -1,0 +1,16 @@
+.footer {
+  padding: 3rem var(--gutter);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--bg);
+}
+
+.copyright {
+  text-transform: uppercase;
+}

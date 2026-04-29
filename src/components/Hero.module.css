@@ -1,0 +1,196 @@
+.hero {
+  min-height: calc(100vh - 60px);
+  position: relative;
+  padding-top: clamp(2rem, 5vh, 4rem);
+  padding-bottom: clamp(2rem, 5vh, 4rem);
+  padding-left: clamp(2rem, 6vw, 4rem);
+  padding-right: var(--gutter);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+}
+
+/* Architectural left rule */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(2rem, 5vh, 4rem);
+  bottom: clamp(2rem, 5vh, 4rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.edition {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.marker {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--brown);
+  border-radius: 50%;
+}
+
+.scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scroll::after {
+  content: "↓";
+  font-size: 1rem;
+  animation: drift 2.5s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headline {
+  font-family: var(--display);
+  font-weight: 350;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 30;
+}
+
+.lineStatement {
+  display: block;
+  font-size: clamp(2.4rem, 6.5vw, 5.4rem);
+  line-height: 1;
+  max-width: 14ch;
+}
+
+.systemWord {
+  font-style: italic;
+  font-weight: 350;
+  font-variation-settings: "SOFT" 100;
+}
+
+.emDash {
+  color: var(--brown);
+  font-style: italic;
+  font-weight: 300;
+  margin-left: 0.05em;
+}
+
+.lineParts {
+  display: block;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-style: italic;
+  font-weight: 350;
+  font-variation-settings: "SOFT" 100;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  max-width: 38ch;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-left: clamp(2rem, 8vw, 6rem);
+  position: relative;
+}
+
+.lineParts::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: clamp(1rem, 5vw, 3.5rem);
+  height: 1px;
+  background: var(--rule);
+}
+
+.lineResolution {
+  display: block;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 350;
+  font-variation-settings: "SOFT" 30;
+  line-height: 1.15;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.verticals {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.metaRight {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .lineParts {
+    padding-left: 1rem;
+  }
+  .lineParts::before {
+    width: 0.5rem;
+  }
+  .metaRight {
+    text-align: left;
+  }
+}
+
+/* Staggered entrance — `fade-in` is the global class from globals.css */
+.top:global(.fade-in) {
+  animation-delay: 0.1s;
+}
+.lineStatement:global(.fade-in) {
+  animation-delay: 0.3s;
+}
+.lineParts:global(.fade-in) {
+  animation-delay: 0.7s;
+}
+.lineResolution:global(.fade-in) {
+  animation-delay: 1s;
+}
+.bottom:global(.fade-in) {
+  animation-delay: 1.3s;
+}
