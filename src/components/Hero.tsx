@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { OscillatorField } from "./OscillatorField";
 import styles from "./Hero.module.css";
 
 export async function Hero() {
@@ -6,6 +7,7 @@ export async function Hero() {
 
   return (
     <section className={styles.hero}>
+      <OscillatorField className={styles.oscillators} />
       <div className={`${styles.top} fade-in`}>
         <span className={styles.edition}>
           <span className={styles.marker} aria-hidden="true" />

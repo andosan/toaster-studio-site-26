@@ -88,3 +88,13 @@ a {
     transform: translateY(0);
   }
 }
+
+/* Variable-axis breathing — Fraunces SOFT axis drifts on roman headline text.
+   Italic spans override font-variation-settings explicitly (SOFT 100) so they
+   stay anchored. Browsers without @property fall back to initial-value (no
+   animation, but legible). */
+@property --soft-roman {
+  syntax: "<number>";
+  initial-value: 30;
+  inherits: true;
+}
