@@ -1,0 +1,69 @@
+:root {
+  /* Palette — earthy, document-like (from design drafts) */
+  --bg: #f2ede4;
+  --bg-warm: #ebe4d6;
+  --ink: #1a1612;
+  --ink-soft: #4a3f35;
+  --rule: #c9bea9;
+  --rule-soft: #d8cfbc;
+
+  --teal: #1f4847;
+  --brown: #6b4f3a;
+  --green: #6f7e5c;
+  --accent: var(--teal);
+
+  /* Typography — bound to next/font/google CSS variables in layout.tsx */
+  --display: var(--font-display), Georgia, serif;
+  --body: var(--font-body), system-ui, sans-serif;
+  --mono: var(--font-mono), ui-monospace, monospace;
+
+  /* Spacing */
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --column: min(70ch, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "ss02";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding: var(--gutter);
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+p {
+  max-width: var(--column);
+}

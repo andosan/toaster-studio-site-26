@@ -1,0 +1,10 @@
+{
+  "site": {
+    "title": "Toaster Studio",
+    "description": "A three-person studio in Ljubljana working with teams in defense, finance, governance, and selected commercial clients."
+  },
+  "home": {
+    "title": "Toaster Studio",
+    "lede": "We work with teams in defense, finance, governance, and selected commercial clients on systems where the work, the audience, and the people building it have to keep moving together."
+  }
+}
