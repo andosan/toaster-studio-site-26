@@ -4,6 +4,9 @@ import { SITE_URL } from "@/lib/seo";
 
 const ROUTES: { path: string; priority?: number }[] = [
   { path: "", priority: 1 },
+  { path: "/build", priority: 0.9 },
+  { path: "/adopt", priority: 0.9 },
+  { path: "/manifest", priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

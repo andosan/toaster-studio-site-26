@@ -1,0 +1,72 @@
+.pageTitle {
+  position: relative;
+  padding: clamp(4rem, 10vh, 7rem) clamp(2rem, 6vw, 4rem)
+    clamp(3rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.pageTitle::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(4rem, 10vh, 7rem);
+  bottom: clamp(3rem, 6vw, 5rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+.breadcrumb {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.marker {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--ink);
+}
+
+.divider {
+  color: var(--rule);
+}
+
+.heading {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--brown);
+  max-width: 32ch;
+  line-height: 1.3;
+}

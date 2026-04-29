@@ -1,21 +1,47 @@
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import styles from "./Header.module.css";
 
-export async function Header() {
-  const t = await getTranslations("header");
+const ACCENT_BY_ROUTE: Record<string, string> = {
+  "/build": "var(--brown)",
+  "/adopt": "var(--green)",
+  "/manifest": "var(--teal)",
+};
+
+export function Header() {
+  const t = useTranslations("header");
+  const pathname = usePathname();
+
+  const navItems = [
+    { href: "/build", label: t("nav.build") },
+    { href: "/adopt", label: t("nav.adopt") },
+    { href: "/manifest", label: t("nav.manifest") },
+    { href: "/work", label: t("nav.work") },
+    { href: "/contact", label: t("nav.contact") },
+  ] as const;
 
   return (
     <header className={styles.header}>
-      <div className={styles.wordmark}>
+      <Link href="/" className={styles.wordmark}>
         {t("wordmarkPrefix")} <span>{t("wordmarkSuffix")}</span>
-      </div>
+      </Link>
       <nav className={styles.nav}>
-        <Link href="/build">{t("nav.build")}</Link>
-        <Link href="/adopt">{t("nav.adopt")}</Link>
-        <Link href="/manifest">{t("nav.manifest")}</Link>
-        <Link href="/work">{t("nav.work")}</Link>
-        <Link href="/contact">{t("nav.contact")}</Link>
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+          const accent = ACCENT_BY_ROUTE[item.href];
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={isActive ? styles.active : undefined}
+              style={isActive && accent ? { ["--active-accent" as string]: accent } : undefined}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
     </header>
   );

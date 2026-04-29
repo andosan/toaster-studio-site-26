@@ -129,5 +129,246 @@
       "secondary": "If that sounds like your project, tell us about it. We respond personally within one working day.",
       "button": "Start a conversation"
     }
+  },
+  "build": {
+    "title": "Build",
+    "metaTitle": "Build — Toaster Studio",
+    "breadcrumb": "Build",
+    "heading": "Build.",
+    "lede": "A project. Defined scope, shipped result, end date.",
+    "sections": {
+      "what": {
+        "numeral": "i.",
+        "label": "What we build",
+        "h2": "Single deliverables with internal complexity.",
+        "p1": "Sites, systems, interfaces, identities. Most often for teams in defense, finance, governance, and selected commercial work. The work is usually a single deliverable with internal complexity — a portal that has to pass compliance review, a sales site that has to feel different from the rest of the category, a system that has to live alongside legacy infrastructure.",
+        "p2": "We don't take on every project. We take on projects where the four parts of the system — the client, the audience, the work, the people building it — have a chance of moving together. If one of those is broken before we start, the project will not survive contact with reality, and we'll say so."
+      },
+      "how": {
+        "numeral": "ii.",
+        "label": "How a build works",
+        "h2": "Four phases. Plain language. No surprises.",
+        "steps": {
+          "scope": {
+            "name": "Scope.",
+            "body": "We write the scope together. Two to three working sessions, sometimes more for complex systems. The scope document is short, written in plain language, and includes what we will not do as clearly as what we will. You sign it; we sign it; it becomes the contract."
+          },
+          "make": {
+            "name": "Make.",
+            "body": "The studio delivers. Three people, with banking-grade engineering through Inetis when the work needs it — typically for compliance-heavy, security-sensitive, or large-scale systems. AI infrastructure is used where it earns its place: asset preparation, content production, internal tooling. It is not used where it doesn't belong — strategy, judgement, or anything where being wrong has consequences."
+          },
+          "ship": {
+            "name": "Ship.",
+            "body": "We ship to staging early and often. You see the work growing, not a final reveal. When the work is ready for production, we hand over with documentation your team can read, not just your developers."
+          },
+          "after": {
+            "name": "After.",
+            "body": "We are available for a defined period after launch — typically four to eight weeks — for adjustments and the first round of real-world feedback. After that, the work is yours. If you want continued involvement, that is a different conversation: see <em>adopt</em>."
+          }
+        }
+      },
+      "who": {
+        "numeral": "iii.",
+        "label": "Who delivers the work",
+        "h2": "Three people. Inetis when the work demands it.",
+        "p1Strong": "Standard scope:",
+        "p1": " the studio. Three people, working directly with you. No account managers, no junior staff learning on your project.",
+        "p2Strong": "Banking-grade or large-scale scope:",
+        "p2": " the studio plus Inetis. Inetis is a Swiss-Slovenian engineering partner with twenty years of work in regulated finance. They are named on the contract, named on this page, and visible from the first conversation. Subcontracting hidden behind our brand is not how we work."
+      },
+      "cost": {
+        "numeral": "iv.",
+        "label": "What it costs",
+        "h2": "Fixed scope. Indicative ranges.",
+        "leadMuted": "Most projects sit in the middle of the standard range. The lower end is a focused single deliverable; the upper end is a system with multiple surfaces and integration work.",
+        "rows": {
+          "standardLabel": "Standard projects",
+          "standardAmount": "€15,000 — €80,000",
+          "enterpriseLabel": "Enterprise scope, Inetis-led",
+          "enterpriseAmount": "On quote"
+        },
+        "footnoteMuted": "Pricing is fixed per scope, not time-and-materials. If the scope changes mid-project, we write a short addendum. No surprises at invoicing time."
+      },
+      "next": {
+        "numeral": "v.",
+        "label": "What happens next",
+        "h2": "Tell us about the project.",
+        "p1": "We respond personally within one working day, usually with a short reply that asks two or three clarifying questions before we propose a working session.",
+        "p2Muted": "We take on three to five new build projects each quarter, so a fast no is also possible — and is meant as a signal that you should look elsewhere, not a judgement about the work."
+      }
+    },
+    "cta": {
+      "label": "Start",
+      "text": "If your project has the four parts moving together, we'd like to hear about it.",
+      "textEmphasis": "moving together",
+      "secondary": "Tell us about the project. Personal reply within one working day.",
+      "button": "Start a conversation"
+    }
+  },
+  "adopt": {
+    "title": "Adopt",
+    "metaTitle": "Adopt — Toaster Studio",
+    "breadcrumb": "Adopt",
+    "heading": "Adopt.",
+    "lede": "A relationship. Your team learns to operate AI capability without us in the room.",
+    "sections": {
+      "what": {
+        "numeral": "i.",
+        "label": "What adopt is",
+        "h2": "The answer to a problem most teams already have.",
+        "p1": "AI is in the building, but nobody owns it. People are using ChatGPT in private. A junior is generating copy that nobody is editing. A senior is anxious that the tools are coming for the role. Some workflows have AI bolted on; others don't, for no good reason.",
+        "p2Muted": "Adopt is not training. Training is a course you finish and forget. Adopt is a working relationship — three to six months, weekly cadence — where your team learns to operate AI inside the actual work they do, with someone senior in the room until they don't need one.",
+        "p3Strong": "The goal is graduation, not retention.",
+        "p3": " When your team can run the workflow without us, the engagement either ends or rotates to a new workflow. We measure success by your independence."
+      },
+      "who": {
+        "numeral": "ii.",
+        "label": "Who adopt is for",
+        "h2": "Teams that produce serious work.",
+        "p1": "Content, design, code, research, analysis — and now have to decide what AI does and doesn't touch inside that work. Most often: marketing teams in regulated industries, in-house design and content teams, communications teams in institutions that cannot afford to get AI wrong in public.",
+        "p2Muted": "Adopt is not for teams that want a tool recommendation. It is for teams that want a senior partner thinking alongside them about where AI earns its place in their work and where it doesn't belong at all."
+      },
+      "how": {
+        "numeral": "iii.",
+        "label": "How an engagement works",
+        "h2": "Three phases over three to six months.",
+        "leadMuted": "Total duration depends on the team's starting point and the depth of the workflows in scope.",
+        "phases": {
+          "audit": {
+            "num": "Phase 01",
+            "name": "Audit.",
+            "time": "Weeks 1—3",
+            "body": "We map your current work. What you produce, how you produce it, where AI is already in use (often in private), where the obvious tedium lives, where AI should not be introduced. Output is a one-page roadmap, jointly owned, with priorities your team agrees with."
+          },
+          "pilot": {
+            "num": "Phase 02",
+            "name": "Pilot.",
+            "time": "Weeks 4—8",
+            "body": "We rebuild one workflow with AI assistance, with two people from your team in the room throughout. The deliverable is not the rebuilt workflow — the deliverable is your team's confidence operating it without supervision. We pick a workflow that matters but isn't critical, so the cost of getting it wrong is low."
+          },
+          "embed": {
+            "num": "Phase 03",
+            "name": "Embed.",
+            "time": "Weeks 9 →",
+            "body": "Weekly office hours. Tool selection guidance. Edge case support. Light supervision as your team takes on more workflows on their own. The cadence drops as confidence rises. Engagement ends when your team operates independently — or rotates to the next workflow, if there is one."
+          }
+        }
+      },
+      "delivers": {
+        "numeral": "iv.",
+        "label": "Who delivers",
+        "h2": "Founder-led. Every session.",
+        "p1": "Every conversation, every judgement call. There is no junior staff on adopt engagements, no rotation of consultants, no team behind the curtain. The work is delicate — when AI applies, when it doesn't, how to introduce it to a team without provoking the wrong reaction — and it is not something we delegate.",
+        "p2Muted": "This is also why we hold the engagement count at two to three at a time. More than that, and the depth that makes adopt work disappears."
+      },
+      "cost": {
+        "numeral": "v.",
+        "label": "What it costs",
+        "h2": "Two tiers. Monthly retainer. Three-month minimum.",
+        "tiers": {
+          "advisory": {
+            "tag": "Tier 01",
+            "name": "Advisory",
+            "price": "€3,000 / month",
+            "hours": "2—3 hours / week of founder time",
+            "body": "Weekly working session, async support between sessions, tool and method guidance. Your team brings their work; we ask questions; they leave with the next week's direction."
+          },
+          "handsOn": {
+            "tag": "Tier 02",
+            "name": "Hands-on",
+            "price": "€5,000 / month",
+            "hours": "4—5 hours / week of founder time",
+            "body": "Pair-working sessions where we sit alongside your team inside the work itself. We work inside your actual deliverables — not on practice tasks. Your team learns by shipping with us, not by watching us."
+          }
+        },
+        "afterTiersMuted": "Annual prepayment is available with a ten percent discount. Either tier can be paused or rotated to a different workflow with two weeks notice.",
+        "footnote": "Pricing is for the relationship, not for hours billed. We do not track time on adopt engagements; we track outcomes — workflows your team owns, decisions your team makes, anxieties that have stopped showing up in our conversations."
+      },
+      "next": {
+        "numeral": "vi.",
+        "label": "What happens next",
+        "h2": "Tell us about your team and the work.",
+        "p1": "We respond personally within one working day. The first conversation is a thirty-minute call where we listen more than we speak — most adopt engagements start because someone on your team has already named the right problem, and we want to hear it from them before we propose anything.",
+        "p2Muted": "We take on two to three new adopt engagements at a time. If we are at capacity, we'll say so and propose a date when we can start. Adopt is not something we say yes to in order to fill calendar."
+      }
+    },
+    "cta": {
+      "label": "Start",
+      "text": "Adopt is for teams ready to own AI inside their work — not delegate it.",
+      "textEmphasis": "own AI inside their work",
+      "secondary": "Tell us about your team and the workflows you want to take ownership of. Personal reply within one working day.",
+      "button": "Start a conversation"
+    }
+  },
+  "manifest": {
+    "title": "How we work",
+    "metaTitle": "How we work — Toaster Studio",
+    "metaDescription": "Five principles for how Toaster Studio takes on work — written down so client and studio agree on what they are agreeing to before the first scope conversation.",
+    "breadcrumb": "Manifest",
+    "cover": {
+      "metaLineOne": "Five principles",
+      "metaLineTwo": "April 2026",
+      "heading": "How we work.",
+      "lede": "Five principles, written down so that you and we both know what we are agreeing to before we start."
+    },
+    "principles": {
+      "one": {
+        "numeral": "i",
+        "label": "Principle one",
+        "h2Before": "The project is the ",
+        "h2Em": "system",
+        "h2After": ", not the deliverable.",
+        "p1": "Every project we take on has four parts: the client who has to live with the result, the audience the work is made for, the work itself with its own logic and lifespan, and the people building it. We work on all four at once. A beautifully made deliverable that the client team cannot operate, that the audience does not trust, or that the makers cannot maintain is a failed project — even if it ships on time.",
+        "p2Muted": "This means our work begins before scope and continues past launch. The scope conversation is itself part of the work. The handoff is part of the work. What happens to the project six months after we leave is part of the work, even if we are not in the room for it. We design with all of that in view."
+      },
+      "two": {
+        "numeral": "ii",
+        "label": "Principle two",
+        "h2Before": "We say ",
+        "h2Em": "no",
+        "h2After": " when one of the four parts is broken.",
+        "p1": "Some projects come to us with one part already broken before the first conversation. The client team has been instructed to deliver something they don't believe in. The audience is being assumed rather than understood. The work itself is the wrong answer to the actual problem. The makers — us, in this case — would be set up to fail.",
+        "p2MutedHtml": "When we see this, we say so. Sometimes the conversation that follows fixes the broken part and the project goes ahead. Sometimes it doesn't, and we don't take the work. <strong>Saying no early is a service we provide, not a failure of nerve.</strong> Three to five new clients per quarter is a number we hold to specifically so that we can afford to say no when no is the right answer."
+      },
+      "three": {
+        "numeral": "iii",
+        "label": "Principle three",
+        "h2Before": "AI is a ",
+        "h2Em": "tool",
+        "h2After": ". We use it where it earns its place.",
+        "p1": "We run AI in three layers across our own studio: creative production (asset generation, brand-consistent imagery, color grading), production infrastructure (asset processing pipelines, integrations, internal automations), and underlying infrastructure (analytics, content delivery, search optimization). We use these layers because they let three people do the work of thirty without losing the discipline of three.",
+        "p2Html": "We do not use AI for strategy. We do not use AI for judgement calls about what a client should do. We do not use AI to write the parts of the work where being wrong has consequences — legal copy, regulated content, anything that reflects an institutional voice. We do not use AI as a substitute for understanding the audience. <strong>The line is not where AI is technically capable; the line is where being wrong matters and the cost of correction is high.</strong>",
+        "p3Muted": "When we use AI inside client work, we say so. When we don't, we say that too. The studio's AI infrastructure is part of how we deliver, not a hidden ingredient."
+      },
+      "four": {
+        "numeral": "iv",
+        "label": "Principle four",
+        "h2Before": "We ",
+        "h2Em": "name",
+        "h2After": " our partners.",
+        "p1": "Banking-grade engineering on enterprise scope is delivered jointly with Inetis, a Swiss-Slovenian engineering partner with twenty years in regulated finance. Inetis is named on the contract, named on this site, and visible from the first conversation. We do not subcontract behind our own brand.",
+        "p2Muted": "The same holds for the rest of our stack. The tools we run, the infrastructure we depend on, the people we bring in for specialist work — these are visible to clients who ask, and most of them are listed publicly. A studio of three is only honest about being a studio of three if it is also honest about the network around it."
+      },
+      "five": {
+        "numeral": "v",
+        "label": "Principle five",
+        "h2Before": "The work has to ",
+        "h2Em": "outlive",
+        "h2After": " us.",
+        "p1": "When a project ships, it has to be operable by the team that owns it without us in the room. Documentation written in plain language, not just for developers. Systems that the client team can extend without rebuilding. Decisions made early enough that the client team can carry them forward.",
+        "p2MutedHtml": "For projects where the team needs to internalize new capability — most often AI capability — we offer adopt as a separate service. Adopt is what happens when build alone is not enough: the team needs to learn to operate the new work, not just receive it. Either way, the goal is the same. The work is yours after we ship it. <strong>We measure ourselves by what your team does with it next.</strong>"
+      }
+    },
+    "colophon": {
+      "text": "Last revised April 2026. We update this page when our practice changes, not on a schedule.",
+      "version": "v.01"
+    },
+    "cta": {
+      "label": "Start",
+      "text": "If our principles align with yours, the next step is a conversation.",
+      "textEmphasis": "a conversation",
+      "secondary": "Tell us about the project. Personal reply within one working day.",
+      "button": "Start a conversation"
+    }
   }
 }

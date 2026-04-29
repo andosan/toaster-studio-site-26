@@ -1,0 +1,111 @@
+.cover {
+  position: relative;
+  padding: clamp(5rem, 14vh, 9rem) clamp(2rem, 6vw, 4rem)
+    clamp(4rem, 8vw, 6rem);
+  border-bottom: 1px solid var(--rule-soft);
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1280px;
+}
+
+@media (max-width: 820px) {
+  .cover {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(5rem, 14vh, 9rem);
+  bottom: clamp(4rem, 8vw, 6rem);
+  width: 1px;
+  background: var(--rule);
+}
+
+.coverMeta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.coverMetaLine {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.marker {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.coverMetaLine a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.coverMetaLine a:hover {
+  color: var(--ink);
+}
+
+.divider {
+  color: var(--rule);
+}
+
+.heading {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--brown);
+  max-width: 42ch;
+  line-height: 1.4;
+}
+
+.colophon {
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 6vw, 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+
+.colophonText {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-variation-settings: "SOFT" 100;
+  color: var(--ink);
+  letter-spacing: 0;
+  text-transform: none;
+  max-width: 50ch;
+}

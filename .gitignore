@@ -11,8 +11,8 @@ node_modules/
 # Build output
 .next/
 out/
-build/
-dist/
+/build/
+/dist/
 *.tsbuildinfo
 next-env.d.ts
 

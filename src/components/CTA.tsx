@@ -3,8 +3,12 @@ import { Link } from "@/i18n/navigation";
 import { SectionLabel } from "./SectionLabel";
 import styles from "./CTA.module.css";
 
-export async function CTA() {
-  const t = await getTranslations("home.cta");
+type Props = {
+  namespace?: string;
+};
+
+export async function CTA({ namespace = "home.cta" }: Props = {}) {
+  const t = await getTranslations(namespace);
 
   const text = t("text");
   const emphasis = t("textEmphasis");

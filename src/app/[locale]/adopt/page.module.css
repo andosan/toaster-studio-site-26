@@ -1,0 +1,11 @@
+.footnote {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--display);
+  font-style: italic;
+  font-variation-settings: "SOFT" 80;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  max-width: 60ch;
+}

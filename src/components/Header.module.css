@@ -12,6 +12,8 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
 }
 
 .wordmark span {
@@ -53,6 +55,15 @@
 }
 
 .nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav a.active {
+  color: var(--ink);
+}
+
+.nav a.active::after {
+  background: var(--active-accent, var(--ink));
   transform: scaleX(1);
 }
 
